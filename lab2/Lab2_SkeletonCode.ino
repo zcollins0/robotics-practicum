@@ -9,9 +9,9 @@
 #define RIGHT_SERVO_PIN 12
 #define LEFT_SERVO_PIN 13
 #define IR_LEFT_OUT_PIN 9
-#define IR_LEFT_IN_PIN 8
-#define IR_RIGHT_OUT_PIN 1
-#define IR_RIGHT_IN_PIN 0
+#define IR_LEFT_IN_PIN 10
+#define IR_RIGHT_OUT_PIN 2
+#define IR_RIGHT_IN_PIN 3
 
 // *** Configure Variables
 Servo rightServo;
