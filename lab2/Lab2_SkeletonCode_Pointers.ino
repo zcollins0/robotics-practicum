@@ -64,16 +64,17 @@ void moveForward(int* forwardTime){
 }
 
 int irDetect(bool* right){
+  int ir;
   // Uncomment and dereference pointer correctly:
   /*if( you want to run the right detector){
    *  tone(IR_RIGHT_OUT_PIN, FREQ, 8);
    *  delay(1);
-   *  int ir = digitalRead(IR_RIGHT_IN_PIN);
+   *  ir = digitalRead(IR_RIGHT_IN_PIN);
    * }
    * else{
    *  tone(IR_LEFT_OUT_PIN, FREQ, 8);
    *  delay(1);
-   *  int ir = digitalRead(IR_LEFT_IN_PIN);
+   *  ir = digitalRead(IR_LEFT_IN_PIN);
    * }
    * delay(1);
    * return ir;
