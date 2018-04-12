@@ -20,6 +20,7 @@ int IR_in;
 const int FREQ = 38500; //frequency the ir sensor works at
 const int SERVO_ZERO = 1500;
 
+
 void setup() {
   // put your setup code here, to run once:
   
@@ -41,6 +42,7 @@ void loop() {
   
   // Read IR sensors, decide whether they see an object
   // Make a decision about your movement
+
   
 }
 
@@ -49,30 +51,34 @@ void attachServos(){
   leftServo.attach(LEFT_SERVO_PIN);
 }
 
-void stopMovement(int stopTime){
+void stopMovement(int* stopTime){
   rightServo.writeMicroseconds(1500);
   leftServo.writeMicroseconds(1500); 
-  delay(stopTime);
+  delay(*stopTime);
 }
 
-void moveForward(int forwardTime){  
+void moveForward(int* forwardTime){  
   rightServo.writeMicroseconds(SERVO_ZERO - 100);
   leftServo.writeMicroseconds(SERVO_ZERO + 100);
-  delay(forwardTime);
+  delay(*forwardTime);
 }
 
-int irDetectLeft(){
-  tone(IR_LEFT_OUT_PIN, FREQ, 8);
-  delay(1);
-  int ir = digitalRead(IR_LEFT_IN_PIN);
-  delay(1);
-  return ir;
-}
+int irDetect(bool* right){
+  // Uncomment and dereference pointer correctly:
+  /*if( you want to run the right detector){
+   *  tone(IR_RIGHT_OUT_PIN, FREQ, 8);
+   *  delay(1);
+   *  int ir = digitalRead(IR_RIGHT_IN_PIN);
+   * }
+   * else{
+   *  tone(IR_LEFT_OUT_PIN, FREQ, 8);
+   *  delay(1);
+   *  int ir = digitalRead(IR_LEFT_IN_PIN);
+   * }
+   * delay(1);
+   * return ir;
+   */
+  
+  }
 
-int irDetectRight(){
-  tone(IR_RIGHT_OUT_PIN, FREQ, 8);
-  delay(1);
-  int ir = digitalRead(IR_RIGHT_IN_PIN);
-  delay(1);
-  return ir;
-}
+
